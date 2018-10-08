@@ -3,11 +3,17 @@
         position: absolute;
         height: 100%;
         width: 100%;
+
+    }
+
+    .fixed-menu {
+        width: 100%;
         z-index: 99;
+
     }
 
     .menu-wrapper {
-        z-index: 99;
+        position: fixed;
         display: flex;
         flex-flow: column;
         height: 100%;
@@ -20,18 +26,20 @@
         border-radius: 2px;
         padding: 0 auto;
         border-right: 1px solid rgba(251, 251, 255, 0.2);
-
+        z-index: 99;
     }
 
     .menu-open {
         margin-left: 0px;
         opacity: 1;
+        position: fixed;
+        z-index: 99;
     }
 
     .menu-toggle {
         cursor: pointer;
-        position: absolute;
-        z-index: 1000;
+        position: fixed;
+        z-index: 99;
         top: 0;
         margin: 20px;
         padding: 0px;
@@ -96,7 +104,7 @@
     .menu-social-fb {
         width: 32px;
         height: 32px;
-        margin-left: 50px;
+
         display: inline-block;
         background: url("../../img/facebook-32.png") no-repeat;
     }
@@ -111,7 +119,7 @@
     .menu-social-git {
         width: 32px;
         height: 32px;
-        margin-right: 50px;
+
         display: inline-block;
         background: url("../../img/github-10-32.png") no-repeat;
     }
@@ -128,12 +136,22 @@
 }
 
 @media screen and (min-width: 601px) {
+    .fixed-menu {
+        position: fixed; /* Set the navbar to fixed position */
+        /* Position the navbar at the top of the page */
+
+        width: 100%;
+    }
+
     .menu-site {
-        position: absolute;
+        position: fixed;
         height: 100%;
+        z-index: 99;
     }
 
     .menu-wrapper {
+        z-index: 99;
+        position: fixed;
         display: flex;
         flex-flow: column;
         height: 100%;
@@ -141,7 +159,7 @@
         background-color: rgba(255, 255, 255, .6);
         margin-left: -450px;
         opacity: 0;
-        -webkit-box-shadow: 10px 10px 6px -8px rgba(251, 251, 255, 0.6);
+        -webkit-box-shadow: 10px 0px 16px -8px rgba(251, 251, 255, 0.6);
         transition: all .3s ease-in-out;
         border-radius: 2px;
         padding: 0 auto;
@@ -152,12 +170,14 @@
     .menu-open {
         margin-left: 0px;
         opacity: 1;
+        z-index: 99;
     }
 
     .menu-toggle {
+        z-index: 99;
         cursor: pointer;
         position: absolute;
-        z-index: 1000;
+
         top: 0;
         margin: 20px;
         padding: 0px;
@@ -241,9 +261,22 @@
     }
 
     .social-wrapper {
-        margin-top: 100px;
         text-align: center;
         padding: 0 auto;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .social-wrapper a {
+        margin: 4px;
+        font-size: 24px;
+        color: rgba(0, 0, 0, .5);
+        transition: color .3s ease;
+    }
+
+    .social-wrapper a:hover {
+        color: rgba(0, 0, 0, .3);
     }
 
     .social-open {
@@ -260,7 +293,8 @@
     .menu-social-fb {
         width: 32px;
         height: 32px;
-        margin-left: 60px;
+        padding: 10px;
+        margin-left: 20px;
         float: left;
         display: inline-block;
         background: url("../../img/facebook-32.png") no-repeat;
@@ -274,7 +308,7 @@
     .menu-social-inst {
         width: 32px;
         height: 32px;
-        margin-left: 10px;
+        padding: 10px;
         float: left;
         display: inline-block;
         background: url("../../img/instagram-32.png") no-repeat;
@@ -288,7 +322,7 @@
     .menu-social-git {
         width: 32px;
         height: 32px;
-        margin-left: 10px;
+        padding: 10px;
         float: left;
         display: inline-block;
         background: url("../../img/github-10-32.png") no-repeat;

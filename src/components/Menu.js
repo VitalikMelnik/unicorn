@@ -23,8 +23,8 @@ class Menu extends React.Component {
     render() {
         const linksArray = [
             {name: "Home", url: "/"},
-            {name: "Blog", url: "/roster"},
-            {name: "About us", url: "/schedule"},
+            {name: "Blog", url: "/blog"},
+            {name: "About us", url: "/about_us"},
 
         ];
 
@@ -77,19 +77,18 @@ class Button extends React.Component {
 class Panel extends React.Component {
     render() {
         return (
-            <div
-                className={this.props.open
-                    ? "menu-wrapper menu-open"
-                    : "menu-wrapper"}
-            >
-                <Links
-                    links={this.props.links}
-                    open={this.props.open}
-                />
-                <Social
-                    socialLinks={this.props.socialLinks}
-                    open={this.props.open}
-                />
+            <div className="fixed-menu">
+                <div
+                    className={this.props.open
+                        ? "menu-wrapper menu-open"
+                        : "menu-wrapper"}
+                >
+                    <Links
+                        links={this.props.links}
+                        open={this.props.open}
+                    />
+
+                </div>
             </div>
         );
     }
@@ -97,8 +96,8 @@ class Panel extends React.Component {
 
 class Links extends React.Component {
     render() {
-        const linkList = this.props.links.map((link) => (
-            <li>
+        const linkList = this.props.links.map((link, i) => (
+            <li key={i}>
                 <a href={link.url}>{link.name}</a>
             </li>
         ));
@@ -117,24 +116,5 @@ class Links extends React.Component {
     }
 }
 
-class Social extends React.Component {
-    render() {
-        const socialLinks = this.props.socialLinks.map((link) => (
-            <a target='_blank' href={link.url}>
-                <div className={link.icon}/>
-
-            </a>
-        ));
-
-        return (
-            <div
-                className={this.props.open
-                    ? "social-wrapper social-open"
-                    : "social-wrapper social-closed"}
-            > {socialLinks}
-            </div>
-        );
-    }
-}
 
 export default Menu

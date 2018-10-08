@@ -4,8 +4,8 @@ import Main from './Main'
 
 const App = () => (
     <div>
-        <Menu />
-        <Main />
+        <Menu/>
+        <Main/>
     </div>
 )
 

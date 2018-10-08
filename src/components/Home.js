@@ -29,12 +29,12 @@ class Home extends React.Component {
 
     render() {
         return (
-            <div class='home-div-imgbackr' style={{
+            <div className='home-div-imgbackr' style={{
                 backgroundImage: `url(${this.state.src})`,
                 backgroundSize: 'cover',
                 backgroundAttachment: 'fixed',
             }}>
-                <h2 className="home-welcome-text">
+                <h3 className="home-welcome-text">
                     <p>you must</p>
                     <div className="home-dropping-texts">
                         <p>Work!</p>
@@ -42,7 +42,7 @@ class Home extends React.Component {
                         <p>Progress!</p>
                         <p>LIVE!</p>
                     </div>
-                </h2>
+                </h3>
             </div>
         )
     }
